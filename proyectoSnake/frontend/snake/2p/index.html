@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf-8">
+<head>
+  <title>SnakeGame y chat Enrique García</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="snake.css">
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="container">
+        <header>
+          <div class="masthead clearfix">
+            <div class="container inner">
+              <h3 class="masthead-brand">Snake 2 jugadores</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="../../../frontend/index.html">Inicio</a></li>
+                  <li><a href="../index.html">Selección de jugadores</a></li>
+                  <li><a href="#">Chat</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <section class="vh-100">
+          <div class="container h-100">
+
+            <div id="pantallaInicial" class="h-100">
+              <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                <h1>Snake multijugador</h1>
+                <button
+                type="submit"
+                class="btn btn-success"
+                id="btnNuevoJuego"
+                >
+                Crear nuevo juego
+              </button>
+              <div>o</div>
+              <div class="form-group">
+                <input type="text" placeholder="Pon aquí el código del juego" id="inputCodigo"/>
+              </div>
+              <button
+              type="submit"
+              class="btn btn-success"
+              id="btnUnirse"
+              >
+              Unirse a un juego
+            </button>
+          </div>
+        </div>
+
+        <div id="pantallaJuego" class="h-100">
+          <div class="d-flex flex-column align-items-center justify-content-center h-100">
+
+            <h1>Tu código es: <span id="displayCodigo"></span></h1>
+
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+  </div>
+
+</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
