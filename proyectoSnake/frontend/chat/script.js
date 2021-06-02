@@ -3,27 +3,27 @@ const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
-const name = prompt('¿Cual es tu nombre?')
+const nombre = prompt('¿Cual es tu nombre?')
 appendMessage('Te has unido')
-socket.emit('new-user', name)
+socket.emit('nuevoUsu', nombre)
 
-socket.on('chat-message', data => {
-  appendMessage(`${data.name}: ${data.message}`)
+socket.on('mensajeChat', data => {
+  appendMessage(`${data.nombre}: ${data.message}`)
 })
 
-socket.on('user-connected', name => {
-  appendMessage(`${name} connected`)
+socket.on('usuarioConectad', nombre => {
+  appendMessage(`${nombre} connected`)
 })
 
-socket.on('user-disconnected', name => {
-  appendMessage(`${name} disconnected`)
+socket.on('usuarioDesc', nombre => {
+  appendMessage(`${nombre} se ha desconectado`)
 })
 
 messageForm.addEventListener('submit', e => {
   e.preventDefault()
   const message = messageInput.value
-  appendMessage(`You: ${message}`)
-  socket.emit('send-chat-message', message)
+  appendMessage(`Tu: ${message}`)
+  socket.emit('enviarMensajeChat', message)
   messageInput.value = ''
 })
 

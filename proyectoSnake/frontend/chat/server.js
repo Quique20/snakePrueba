@@ -3,15 +3,15 @@ const io = require('socket.io')()
 const users = {}
 
 io.on('connection', socket => {
-  socket.on('new-user', name => {
-    users[socket.id] = name
-    socket.broadcast.emit('user-connected', name)
+  socket.on('nuevoUsu', nombre => {
+    users[socket.id] = nombre
+    socket.broadcast.emit('usuarioConectad', nombre)
   })
-  socket.on('send-chat-message', message => {
-    socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] })
+  socket.on('enviarMensajeChat', message => {
+    socket.broadcast.emit('mensajeChat', { message: message, nombre: users[socket.id] })
   })
   socket.on('disconnect', () => {
-    socket.broadcast.emit('user-disconnected', users[socket.id])
+    socket.broadcast.emit('usuarioDesc', users[socket.id])
     delete users[socket.id]
   })
 })
