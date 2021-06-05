@@ -2,7 +2,7 @@ const BG_COLOUR = '#231f20';
 const SNAKE_COLOUR = '#c2c2c2';
 const FOOD_COLOUR = '#e66916';
 
-const socket = io('https://obscure-retreat-30706.herokuapp.com/');
+const socket = io('https://still-wildwood-60909.herokuapp.com/');
 
 //se activan los metodos que vamos a usar mediante socket.on
 socket.on('init', manejarInit);
